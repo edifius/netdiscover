@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/CyCoreSystems/netdiscover/discover"
+	"github.com/edifius/netdiscover"
 )
 
 var (
