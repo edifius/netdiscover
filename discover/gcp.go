@@ -2,6 +2,7 @@ package discover
 
 import (
 	"net"
+	"log"
 )
 
 const (
@@ -19,10 +20,13 @@ func NewGCPDiscoverer() Discoverer {
 }
 
 func gcpPrivateIPv4() (net.IP, error) {
+
+	log.Print(StandardIPFromHTTP(gcpPrivateIPv4URL, map[string]string{"Metadata-Flavor": "Google"}))
 	return StandardIPFromHTTP(gcpPrivateIPv4URL, map[string]string{"Metadata-Flavor": "Google"})
 }
 
 func gcpPublicIPv4() (net.IP, error) {
+	log.Print(StandardIPFromHTTP(gcpPublicIPv4URL, map[string]string{"Metadata-Flavor": "Google"}))
 	return StandardIPFromHTTP(gcpPublicIPv4URL, map[string]string{"Metadata-Flavor": "Google"})
 }
 
