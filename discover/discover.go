@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net"
 	"net/http"
 	"strings"
@@ -94,6 +95,8 @@ func NewDiscoverer(opts ...DiscovererOption) Discoverer {
 		getPublicIPv4:  defaultPublicIPv4,
 		getPublicIPv6:  defaultPublicIPv6,
 	}
+
+	log.Print("This is the new discoverer")
 
 	for _, opt := range opts {
 		if opt != nil {
