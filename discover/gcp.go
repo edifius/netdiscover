@@ -14,13 +14,13 @@ const (
 // NewGCPDiscoverer returns a new Google Cloud Platform network discoverer
 func NewGCPDiscoverer() Discoverer {
 	return NewDiscoverer(
+		PrivateIPv4DiscovererOption(gcpPrivateIPv4),
 		PublicIPv4DiscovererOption(gcpPublicIPv4),
 		PublicHostnameDiscovererOption(gcpHostname),
 	)
 }
 
 func gcpPrivateIPv4() (net.IP, error) {
-
 	log.Print(StandardIPFromHTTP(gcpPrivateIPv4URL, map[string]string{"Metadata-Flavor": "Google"}))
 	return StandardIPFromHTTP(gcpPrivateIPv4URL, map[string]string{"Metadata-Flavor": "Google"})
 }
