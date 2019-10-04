@@ -14,7 +14,7 @@ const (
 // NewGCPDiscoverer returns a new Google Cloud Platform network discoverer
 func NewGCPDiscoverer() Discoverer {
 	return NewDiscoverer(
-		PrivateIPv4DiscovererOption(gcpPrivateIPv4),
+		//PrivateIPv4DiscovererOption(gcpPrivateIPv4),
 		PublicIPv4DiscovererOption(gcpPublicIPv4),
 		PublicHostnameDiscovererOption(gcpHostname),
 	)
