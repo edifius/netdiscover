@@ -54,7 +54,7 @@ func main() {
 	case "do":
 		discoverer = discover.NewDigitalOceanDiscoverer()
 	case "gcp":
-		discoverer = discover.NewGCPDiscoverer()
+		discoverer = discover.NewDiscoverer()
 	default:
 		discoverer = discover.NewDiscoverer()
 	}
